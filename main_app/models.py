@@ -7,3 +7,6 @@ class Hike(models.Model):
     length = models.IntegerField()
     elevation = models.IntegerField()
     description = models.TextField(max_length=300)
+
+    def __str__(self):
+        return self.name

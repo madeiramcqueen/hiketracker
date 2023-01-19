@@ -1,18 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-class Hike:
-    def __init__(self, name, location, length, elevation, level, description):
-        self.name = name
-        self.location = location
-        self.length = length
-        self.elevation = elevation
-        self.level = level
-        self.description = description
-        
-hikes = [
-    Hike('Mount Si', 'North Bend, WA', '8 miles', '3150 ft', 'Difficult', 'Very steep but rewarding!'),
-]
+from .models import Hike
 
 # Home view
 def home(request):
@@ -24,4 +12,5 @@ def about(request):
 
 # My Hikes view
 def hikes_index(request):
+    hikes = Hike.objects.all()
     return render(request, 'hikes/index.html', {'hikes': hikes})
