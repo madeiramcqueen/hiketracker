@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{hike.name}} Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ hike.name }}</span>
+    <p>Location: {{ hike.location }}</p>
+    <p>Length: {{ hike.length }}</p>
+    <p>Elevation: {{ hike.elevation }}</p>
+    <p>Description: {{ hike.description }}</p>
+  </div>
+</div>
+
+{% endblock %}
