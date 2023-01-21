@@ -17,10 +17,13 @@ def hikes_index(request):
     hikes = Hike.objects.all()
     return render(request, 'hikes/index.html', {'hikes': hikes})
 
+# Show details of a specific hike view
 def hikes_detail(request, hike_id):
     hike = Hike.objects.get(id=hike_id)
     return render(request, 'hikes/detail.html', {'hike': hike})
 
+# Create a new hike view
 class HikeCreate(CreateView):
     model = Hike
     fields = '__all__'
+    success_url = '/hikes/'
