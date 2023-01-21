@@ -1,12 +1,11 @@
 from django.shortcuts import render, redirect
 import os
-from django.http import HttpResponse
 from .models import Hike
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Home view
 def home(request):
-    return HttpResponse('<h1> Welcome to  your Hike Tracker! </h1>')
+    return render(request, 'home.html')
 
 # About view
 def about(request):
