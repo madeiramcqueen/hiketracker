@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 import os
 from django.http import HttpResponse
 from .models import Hike
-from django.views.generic import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Home view
 def home(request):
@@ -31,3 +31,7 @@ class HikeCreate(CreateView):
 class HikeUpdate(UpdateView):
     model = Hike
     fields = '__all__'
+
+class HikeDelete(DeleteView):
+    model = Hike
+    success_url = '/hikes/'

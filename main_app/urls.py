@@ -9,5 +9,6 @@ urlpatterns = [
     path('hikes/<int:hike_id>/', views.hikes_detail, name='detail'),
     path('hikes/create/', views.HikeCreate.as_view(), name='hikes_create'),
     path('hikes/<int:pk>/update/', views.HikeUpdate.as_view(), name='hikes_update'),
+    path('hikes/<int:pk>/delete/', views.HikeDelete.as_view(), name='hikes_delete'),
 ]
 
