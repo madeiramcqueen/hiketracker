@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-import os
-from .models import Hike
+from .models import Hike, Photo
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+import uuid
+import boto3
+import os
 
 # Home view
 def home(request):
@@ -36,3 +38,23 @@ class HikeUpdate(UpdateView):
 class HikeDelete(DeleteView):
     model = Hike
     success_url = '/hikes/'
+
+# Add a photo
+def add_photo(request, hike_id):
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        # need a unique "key" for S3 / needs image file extension too
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+        # if error
+        try:
+            bucket = os.environ['S3_BUCKET']
+            s3.upload_fileobj(photo_file, bucket, key)
+            # build the full url string
+            url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
+            # assign to hike_id or hike object
+            Photo.objects.create(url=url, hike_id=hike_id)
+        except Exception as e:
+            print('An error occurred uploading file to S3')
+            print(e)
+    return redirect('detail', hike_id=hike_id)
