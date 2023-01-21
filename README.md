@@ -12,4 +12,4 @@ For all my outdoorsy friends who love to go on hikes - this app is for you! Keep
 6. Materialize
 
 ### Currently Working On:
-- Setting up a Google Maps component to show where exactly the hike location is
+- Setting up Google Maps API to show where exactly the hike location is
