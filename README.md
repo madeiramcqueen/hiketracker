@@ -9,7 +9,8 @@ For all my outdoorsy friends who love to go on hikes - this app is for you! Keep
 3. PostgreSQL
 4. HTML
 5. CSS
-6. Materialize
+6. AWS
+7. Materialize
 
 ### Currently Working On:
 - Setting up Google Maps API to show where exactly the hike location is
