@@ -11,6 +11,7 @@ urlpatterns = [
     path('hikes/<int:pk>/delete/', views.HikeDelete.as_view(), name='hikes_delete'),
     path('hikes/<int:hike_id>/add_photo/', views.add_photo, name='add_photo'),
     path('register', views.register_request, name='register'),
-    path('registration/logout', views.logout, name='logout')
+    path('registration/logout', views.logout, name='logout'),
+    path('registration/login', views.login, name='login'),
 ]
 
