@@ -1,4 +1,4 @@
-# Current Project: Hike Tracker :mountain:
+# Current Project: HikesGalore, A Hike Tracker App :mountain:
 
 ## Description
 
@@ -6,7 +6,7 @@ For all my outdoorsy friends who love to go on hikes - this app is for you! Keep
 
 ## ERD
 
-![HikesGaloreERD](./main_app/static/images/HikesGalore_ERD.png "HikesGaloreERD")
+![HikesGaloreERD](./main_app/static/css/images/HikesGalore_ERD.png "HikesGaloreERD")
 
 ### Technologies Used:
 
