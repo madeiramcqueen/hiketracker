@@ -17,6 +17,18 @@
   <a href="{% url 'hikes_delete' hike.id %}">Delete</a>
 </div>
 
+<iframe
+  width="600"
+  height="450"
+  style="border: 0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBNe_GAT_AX7NHQ1uQLmhDHD0D1zOGSvco
+    &q=47.4348743,-121.7689551"
+>
+</iframe>
+
 {% for photo in hike.photo_set.all %}
 <img class="responsive-img card-panel" src="{{photo.url}}" />
 {% empty %}
